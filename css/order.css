@@ -1,0 +1,144 @@
+/* order online css */
+
+.order{
+    width: 100%;
+    background:	#fafafa;
+    padding-bottom: 50px;
+}
+.order-title{
+    width: 100%;
+}
+.order-title div{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 80px;
+    border-bottom: 2px solid orange;
+}
+.order-wrapper{
+    width: 1200px;
+    margin: 15px auto;
+    background: #fff;
+    box-shadow: 2px 2px 2px #ddd;
+    /* border-top: 2px solid orange; */
+}
+.order-content{
+    padding: 0 80px;
+}
+.order-content-title{
+    width: 130px;
+    font-size: 18px;
+    padding: 5px 10px;
+    line-height: 30px;
+    text-align: center;
+    background: orange;
+    color: #fff;
+    border-top: 2px solid orange;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.order-form-row{
+    display: flex;
+    padding: 30px 50px 50px 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.order-form-col{
+    margin: 20px 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+.form-item{
+    width:auto;
+    margin: 12px 0;
+    height: 30px;
+    position: relative;
+}
+.form-item .item-label{
+    display: inline-block;
+    width: 100px;
+    padding-right: 20px;
+    line-height: 30px;
+    text-align: right;
+}
+.form-item .item-content{
+    display: inline-block;
+}
+.form-item .item-content input{
+    width:250px ;
+    height: 30px;
+    padding-left: 20px;
+    border: 1px solid #aaa;
+   font-size: 16px;
+}
+.order-form-col .form-item .item-content input{
+    width:500px ;
+    height: 30px;
+    padding-left: 20px;
+    border: 1px solid #aaa;
+   font-size: 16px;
+}
+select{
+    height: 30px;
+    padding-left: 20px;
+    border: 1px solid #aaa;
+   font-size: 16px;
+}
+.form-item .item-content .input-focus{
+    border: 1px solid orange;
+}
+.form-item .item-content input:hover{
+    border: 1px solid orange;
+}
+
+.form-item .item-content input::placeholder{
+    color: #aaa;
+}
+.form-item .item-content .input-dropdown-list{
+    display: none;
+position: absolute;
+right: 0;
+top: 28px;
+width: 250px;
+border: 1px solid #aaa;
+padding:10px 20px;
+background: #fff;
+font-size: 16px;
+z-index: 9;
+}
+#goDate, #goTime{
+padding: 10px 20px;
+}
+.order-total-wrapper{
+    background: #000;
+    border-bottom: 1px solid #333;;
+}
+.order-total{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 40px 100px;
+    height: 140px;
+}
+.total{
+    font-size: 36px;
+    color: orange;
+}
+.sub-order{
+    color:#aaa;
+}
+.sub-order button{
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 20px;
+    color:#fff;
+    margin-bottom: 5px;
+}
+.sub-order .agree{
+    margin-right: 10px;
+}

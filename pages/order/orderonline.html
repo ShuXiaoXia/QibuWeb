@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>在线下单-七步速运</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1211472_nh0jju50wj.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/order.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="nav-wrapper">
+        <div class="nav-content">
+            <!-- logo格式 -->
+            <div class="nc-logo">
+                <img src="../../images/logo-name.png">
+            </div>
+            <!-- 菜单 -->
+            <div class="nc-menu">
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+
+                    <!-- 客户服务子菜单 -->
+                    <li class="active">
+                        <a href="../order/orderonline.html">在线下单</a>
+                        <div class="nc-menulist">
+                            <div class="nc-menulist-li">
+                                <a href="javascript:void(0);">单号查询</a>
+                                <a href="javascript:void(0);">网点查询</a>
+                                <a href="javascript:void(0);">价格时效查询</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- 业务介绍子菜单 -->
+                    <li><a href="javascript:void(0);">业务介绍</a>
+                        <div class="nc-menulist">
+                            <div class="nc-menulist-li">
+                                <h4>快递</h4>
+                                <a href="javascript:void(0);">特准快递</a>
+                                <a href="javascript:void(0);">电商尊享</a>
+                                <a href="javascript:void(0);">标准快递</a>
+                                <a href="javascript:void(0);">大件快递</a>
+                            </div>
+                            <div class="nc-menulist-li">
+                                <h4>零担</h4>
+                                <a href="javascript:void(0);">精准汽运</a>
+                                <a href="javascript:void(0);">精准空运</a>
+                                <a href="javascript:void(0);">精准卡航</a>
+                            </div>
+                            <div class="nc-menulist-li">
+                                <h4>仓储</h4>
+                                <a href="javascript:void(0);">仓配一体化</a>
+                                <a href="javascript:void(0);">同城仓配</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- 帮助中心子菜单 -->
+                    <li><a href="javascript:void(0);">帮助中心</a></li>
+
+                    <!-- 关于我们子菜单 -->
+                    <li><a href="javascript:void(0);">关于七步</a></li>
+                </ul>
+            </div>
+            <!-- 导航右侧 -->
+            <div class="nc-login">
+                <a href="javascript:void(0);">登录</a>
+                <a href="javascript:void(0);">注册</a>
+                <a href="javascript:void(0);">简</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- order -->
+    <form id="order" class="order">
+        <div class="order-title">
+            <div>在线下单</div>
+        </div>
+        <div class="order-wrapper">
+            <div class="order-content">
+                <div class="order-content-title">收发货信息</div>
+                <div class="order-form-row">
+                    <div id="sender" class="order-form-col">
+                        <div class="form-item">
+                            <div class="item-label">寄件人姓名</div>
+                            <div class="item-content">
+                                <input type="text" name="sendername" placeholder="请输入寄件人姓名"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入寄件人姓名'" required>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="item-label">联系电话</div>
+                            <div class="item-content">
+                                <input type="text" name="senderphone" placeholder="请输入手机/电话"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机/电话'" required>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="item-label">省市区</div>
+                            <div class="item-content">
+                                <select id="senderProvice" name="senderprovice" required>
+                                    <option value="">==请选择省份==</option>
+                                </select>
+                                <select id="senderCity" name="sendercity" required>
+                                    <option value="">==请选择城市==</option>
+                                </select>
+                                <select id="senderCounty" name="sendercounty" required>
+                                    <option value="">==请选择区县==</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="item-label">详细地址</div>
+                            <div class="item-content">
+                                <input type="text" name="senderaddress" placeholder="请输入详细街道"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入详细街道'" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="recipient" class="order-form-col rf">
+                        <div class="form-item">
+                            <div class="item-label">收件人姓名</div>
+                            <div class="item-content">
+                                <input type="text" name="receivername" placeholder="请输入收件人姓名"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入收件人姓名'" required>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="item-label">联系电话</div>
+                            <div class="item-content">
+                                <input type="text" name="receiverphone" placeholder="请输入手机/电话"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机/电话'" required>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="item-label">省市区</div>
+                            <div class="item-content">
+                                <select id="receiverProvice" name="receiverProvice" required>
+                                    <option value="">==请选择省份==</option>
+                                </select>
+                                <select id="receiverCity" name="receiverCity" required>
+                                    <option value="">==请选择城市==</option>
+                                </select>
+                                <select id="receiverCounty" name="receiverCounty" required>
+                                    <option value="">==请选择区县==</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="item-label">详细地址</div>
+                            <div class="item-content">
+                                <input type="text" name="receiveraddress" placeholder="请输入详细街道"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入详细街道'" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-wrapper">
+            <div class="order-content">
+                <div class="order-content-title">寄托物信息</div>
+                <div id="goods" class="order-form-row">
+                    <div class="form-item">
+                        <div class="item-label">货物名称</div>
+                        <div class="item-content">
+                            <input name="goodname" type="text" placeholder="请输入货物名称"></div>
+                    </div>
+                    <div class="form-item">
+                        <div class="item-label">重量(kg)</div>
+                        <div class="item-content">
+                            <input name="weight" type="number" placeholder="请输入重量" onchange="weightChange(this.value)" required></div>
+                    </div>
+                    <div class="form-item">
+                        <div class="item-label">体积(m<sup>3</sup>)</div>
+                        <div class="item-content">
+                            <input name="volume" type="number" placeholder="请输入体积（单位立方米）"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-wrapper">
+            <div class="order-content">
+                <div class="order-content-title">服务信息</div>
+                <div id="services" class="order-form-row">
+                    <div class="form-item">
+                        <div class="item-label">付款方式</div>
+                        <div class="item-content">
+                            <div>
+                                <input id="payMethod" name="paymethod" type="text" placeholder="请选择付款方式" readonly="readonly">
+                            </div>
+                            <div id="payMethodList" class="input-dropdown-list">
+                                <ul>
+                                    <li>到付</li>
+                                    <li>现付</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="item-label">上门时间</div>
+                        <div class="item-content">
+                            <input id="goDay" name="goDay" type="text" placeholder="请选择上门时间" readonly="readonly">
+                            <div id="godateList" class="input-dropdown-list">
+                                <ul id="goDate" style="display: none">
+                                </ul>
+                                <ul id="goTime" style="display: none">
+                                    <li>09:00-10:00</li>
+                                    <li>13:00-14:00</li>
+                                    <li>16:00-17:00</li>
+                                    <li>19:00-20:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="item-label">备注</div>
+                        <div class="item-content">
+                            <input name="mark" class="remarks" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </form>
+
+    <!-- total -->
+    <div class="order-total-wrapper">
+        <div class="order-total">
+            <div class="total lf">预估总价 <label id="total">-</label>元</div>
+            <div class="sub-order rf">
+                <button  id="submitbtn" type="submit">立即下单</button>
+                <div>
+                    <input class="agree" type="checkbox" checked><a href="javascript:void(0);">我已理解并同意遵守服务条款</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="footer-wrapper">
+        <div class="footertop-content">
+            <div class="footertop-left">
+                <div class="footer-menu">
+                    <h4>业务</h4>
+                    <div class="footer-menulist">
+                        <a href="javascript:void(0);">快递</a>
+                        <a href="javascript:void(0);">整车</a>
+                        <a href="javascript:void(0);">跨境</a>
+                        <a href="javascript:void(0);">仓储</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <h4>关于七步</h4>
+                    <div class="footer-menulist">
+                        <a href="javascript:void(0);">公司概况</a>
+                        <a href="javascript:void(0);">新闻消息</a>
+                        <a href="javascript:void(0);">人才招聘</a>
+                        <a href="javascript:void(0);">联系七步</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <h4>帮助中心</h4>
+                    <div class="footer-menulist">
+                        <a href="javascript:void(0);">帮助中心</a>
+                        <a href="javascript:void(0);">在线客服</a>
+                        <a href="javascript:void(0);">咨询/建议/投诉</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <h4>投资关系</h4>
+                    <div class="footer-menulist">
+                        <a href="javascript:void(0);">公司公告</a>
+                        <a href="javascript:void(0);">财务信息</a>
+                    </div>
+                </div>
+
+                <div class="footer-menu footertop-right">
+                    <div class="footer-contact">
+                        <h4>微信小程序</h4>
+                        <img src="../../images/微信图片_20190525114849.jpg">
+                    </div>
+                    <div class="footer-contact">
+                        <h4>联系我</h4>
+                        <img src="../../images/微信图片_20190525114849.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom-wrapper">
+            <div class="footerbottom-content">
+                Copyright &copy; 七步物流股份有限公司.All Rights Reserved.泸ICP备123123123
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../../js/city.js" async defer></script>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <script src="../../js/form.js" async defer></script>
+</body>
+
+</html>
