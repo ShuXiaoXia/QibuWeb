@@ -26,48 +26,47 @@
  selectDrop("payMethod", "payMethodList");
 
  // ------------城市选择 --------------------
- var citySelect = function (SP, SC, Sc) {
+var citySelect = function (SP, SC, Sc) {
    let selectP = document.getElementById(SP);
    let selectC = document.getElementById(SC);
    let selectc = document.getElementById(Sc);
 
    for (let i = 0; i < provice.length; i++) {
-     let ii = i;
      var option = document.createElement("option");
      option.innerHTML = provice[i].name;
      selectP.appendChild(option);
+   }
 
-     option.onclick = function () {
-       let childs = selectC.children;
-       for (let i = childs.length - 1; i > 0; i--) {
-         selectC.removeChild(childs[i]);
-       }
+   selectP.onchange = function () {
+     let j = selectP.selectedIndex - 1;
+     let childs = selectC.children;
+     for (let i = childs.length - 1; i > 0; i--) {
+       selectC.removeChild(childs[i]);
+     }
+     let childss = selectc.children;
+     for (let i = childss.length - 1; i > 0; i--) {
+       selectc.removeChild(childss[i]);
+     }
+     for (m = 0; m < provice[j].city.length; m++) {
+       var option = document.createElement("option");
+       option.innerHTML = provice[j].city[m].name;
+       selectC.appendChild(option);
+     }
+   }
 
-       let childss = selectc.children;
-       for (let i = childss.length - 1; i > 0; i--) {
-         selectc.removeChild(childss[i]);
-       }
+   selectC.onchange = function () {
+     let j = selectP.selectedIndex - 1;
+     let m = selectC.selectedIndex - 1;
 
-       for (m = 0; m < provice[ii].city.length; m++) {
-         let mm = m;
-         var option = document.createElement("option");
-         option.innerHTML = provice[ii].city[m].name;
-         selectC.appendChild(option);
+     let childs = selectc.children;
+     for (let i = childs.length - 1; i > 0; i--) {
+       selectc.removeChild(childs[i]);
+     }
 
-         option.onclick = function () {
-           let childss = selectc.children;
-           for (let i = childss.length - 1; i > 0; i--) {
-             selectc.removeChild(childss[i]);
-           }
-
-           for (n = 0; n < provice[ii].city[mm].county.length; n++) {
-             var option = document.createElement("option");
-             option.innerHTML = provice[ii].city[mm].county[n];
-             selectc.appendChild(option);
-           }
-         }
-
-       }
+     for (n = 0; n < provice[j].city[m].county.length; n++) {
+       var option = document.createElement("option");
+       option.innerHTML = provice[j].city[m].county[n];
+       selectc.appendChild(option);
      }
    }
  }
