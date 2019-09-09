@@ -102,29 +102,27 @@
    goDate.style = "display:block";
  }
  datelist[0].onclick = function () {
-   if (d.getHours() > 9 & d.getHours() < 13) {
-     timelist[0].style = "color:#555";
-   } else if (d.getHours() > 13 & d.getHours() <
+   if (d.getHours() >=9 & d.getHours() < 13) {
+     timelist[0].style = "display:none";
+   } else if (d.getHours() >= 13 & d.getHours() <
      16) {
-     timelist[0].style = "color:#555";
-     timelist[1].style = "color:#555";
-   } else if (d.getHours() > 16 & d.getHours() <
+     timelist[0].style = "display:none";
+     timelist[1].style = "display:none";
+   } else if (d.getHours() >= 16 & d.getHours() <
      19) {
-     timelist[0].style = "color:#555";
-     timelist[1].style = "color:#555";
-     timelist[2].style = "color:#555";
+     timelist[0].style = "display:none";
+     timelist[1].style = "display:none";
+     timelist[2].style = "display:none";
    }
    goTime.style = "display:block";
    for (let n = 0; n < 4; n++) {
      let time = timelist[n];
-     if (time.style.color != "rgb(85, 85, 85)") {
        time.onclick = function () {
          goDay.value = datelist[0].innerHTML + "  " + time.innerHTML;
          goTime.style = "display:none";
          goDate.style = "display:none";
          document.getElementById("godateList").style = "display:none";
        }
-     }
    }
  }
 
@@ -185,7 +183,6 @@
 
 //---------------总计--------------
 function weightChange(weight){
- console.log(weight);
  if(weight<=1){
    document.getElementById("total").innerHTML=12;
  }
@@ -196,15 +193,3 @@ function weightChange(weight){
    alert("超重");
  }
 }
-
-
-// var bbb=document.getElementsByTagName("input")
-// for(let i=0;i<9;i++){
-// if(bbb[i].required==true){
-//   if(bbb[i].value==null){
-//     alert("请填写必填项")
-//   }
-// }
-// }
-
-// if(document.getElementsByTagName("input")){}
