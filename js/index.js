@@ -20,6 +20,7 @@ var carouselTimeOut, slideOver;
         }
     }
 })();
+
 //监听滑动结束改变圆点active
 slide.addEventListener("transitionstart", function () {
     for (i = 0; i < item.length; i++) {
@@ -31,10 +32,10 @@ slide.addEventListener("transitionstart", function () {
             circleList[i].classList.add("active");
         }
     }
-}, false)
+}, false);
 
-//向左一次滑动函数
-function leftSlide() {
+//滑动到下一图
+function rightSlide() {
     slideOver = false;
     for (i = 0; i < item.length; i++) {
         if (item[i].classList.contains("active")) { //找到active的位置
@@ -54,10 +55,15 @@ function leftSlide() {
                 next.classList.add("slide-left");
                 //监听滑动结束后更改类
                 active.addEventListener("transitionend", function () {
-                    active.classList.remove("active", "slide-left");
+                    // active.classList.remove("active", "slide-left");
+                    // IE不能同时添加删除多个类
+                    active.classList.remove("active");
+                    active.classList.remove("slide-left");
                 }, true)
                 next.addEventListener("transitionend", function () {
-                    next.classList.remove("next", "slide-left");
+                    // next.classList.remove("next", "slide-left");
+                    next.classList.remove("next");
+                    next.classList.remove("slide-left");
                     next.classList.add("active");
                     slideOver = true;
                 }, true)
@@ -66,8 +72,8 @@ function leftSlide() {
     }
     return slideOver;
 }
-//向右一次滑动函数
-function rightSlide() {
+//滑动上一图
+function leftSlide() {
     slideOver = false;
     for (i = 0; i < item.length; i++) {
         if (item[i].classList.contains("active")) { //找到active的位置
@@ -88,10 +94,14 @@ function rightSlide() {
                 prev.classList.add("slide-right");
                 //监听滑动结束后更改类
                 active.addEventListener("transitionend", function () {
-                    active.classList.remove("active", "slide-right");
+                    // active.classList.remove("active", "slide-right");
+                    active.classList.remove("active");
+                    active.classList.remove("slide-right");
                 }, true);
                 prev.addEventListener("transitionend", function () {
-                    prev.classList.remove("prev", "slide-right");
+                    // prev.classList.remove("prev", "slide-right");
+                    prev.classList.remove("prev");
+                    prev.classList.remove("slide-right");
                     prev.classList.add("active");
                     slideOver = true;
                 }, true);
@@ -103,7 +113,7 @@ function rightSlide() {
 
 //循环左滑动函数
 function carousel() {
-    leftSlide();
+    rightSlide();
     carouselTimeOut = setTimeout("carousel()", 3000);
 }
 
@@ -117,6 +127,7 @@ carouselW.onmouseover = function (e) {
         clearTimeout(carouselTimeOut);
     }
 }
+
 // 鼠标移出启动自循环
 carouselW.onmouseout = function (e) {
     let obj = e.toElement || e.relatedTarget;
@@ -128,16 +139,20 @@ carouselW.onmouseout = function (e) {
     }
 }
 
+//左按键滑动到上一图
 lc.onclick = function () {
     if (slideOver) {
         setTimeout("leftSlide()", 0100)
     };
 };
+
+//右案件滑动到下一图
 rc.onclick = function () {
     if (slideOver) {
         setTimeout("rightSlide()", 0100)
     };
 };
+
 //圆点控制滑动
 for (let n = 0; n < circleList.length; n++) {
     let cc = circleList[n];

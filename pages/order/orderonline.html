@@ -93,21 +93,21 @@
                 <div class="order-form-row">
                     <div id="sender" class="order-form-col">
                         <div class="form-item">
-                            <div class="item-label">寄件人姓名 *</div>
+                            <div class="item-label form-required">寄件人姓名</div>
                             <div class="item-content">
                                 <input type="text" name="sendername" placeholder="请输入寄件人姓名"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入寄件人姓名'" required>
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入寄件人姓名'" onchange="isName(this.value)" required>
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="item-label">联系电话 *</div>
+                            <div class="item-label form-required">联系电话</div>
                             <div class="item-content">
-                                <input type="text" name="senderphone" placeholder="请输入手机/电话"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机/电话'" required>
+                                <input type="tel" name="senderphone" placeholder="请输入手机/电话"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机/电话'" onchange="isTel(this.value)" required>
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="item-label">省市区 *</div>
+                            <div class="item-label form-required">省市区</div>
                             <div class="item-content">
                                 <select id="senderProvice" name="senderprovice" required>
                                     <option value="">==请选择省份==</option>
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="item-label">详细地址 *</div>
+                            <div class="item-label form-required">详细地址</div>
                             <div class="item-content">
                                 <input type="text" name="senderaddress" placeholder="请输入详细街道"
                                     onfocus="this.placeholder=''" onblur="this.placeholder='请输入详细街道'" required>
@@ -130,21 +130,21 @@
                     </div>
                     <div id="recipient" class="order-form-col rf">
                         <div class="form-item">
-                            <div class="item-label">收件人姓名 *</div>
+                            <div class="item-label form-required">收件人姓名</div>
                             <div class="item-content">
                                 <input type="text" name="receivername" placeholder="请输入收件人姓名"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入收件人姓名'" required>
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入收件人姓名'" onchange="isName(this.value)" required>
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="item-label">联系电话 *</div>
+                            <div class="item-label form-required">联系电话</div>
                             <div class="item-content">
-                                <input type="text" name="receiverphone" placeholder="请输入手机/电话"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机/电话'" required>
+                                <input type="tel" name="receiverphone" placeholder="请输入手机/电话"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机/电话'" onchange="isTel(this.value)" required>
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="item-label">省市区 *</div>
+                            <div class="item-label form-required">省市区</div>
                             <div class="item-content">
                                 <select id="receiverProvice" name="receiverProvice" required>
                                     <option value="">==请选择省份==</option>
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="item-label">详细地址 *</div>
+                            <div class="item-label form-required">详细地址</div>
                             <div class="item-content">
                                 <input type="text" name="receiveraddress" placeholder="请输入详细街道"
                                     onfocus="this.placeholder=''" onblur="this.placeholder='请输入详细街道'" required>
@@ -178,7 +178,7 @@
                             <input name="goodname" type="text" placeholder="请输入货物名称"></div>
                     </div>
                     <div class="form-item">
-                        <div class="item-label">重量(kg) *</div>
+                        <div class="item-label form-required">重量(kg)</div>
                         <div class="item-content">
                             <input name="weight" type="number" placeholder="请输入重量" onchange="weightChange(this.value)" required></div>
                     </div>
@@ -224,7 +224,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-item">
                         <div class="item-label">备注</div>
                         <div class="item-content">
@@ -234,7 +233,6 @@
                 </div>
             </div>
         </div>
-       
     </form>
 
     <!-- total -->
@@ -309,12 +307,11 @@
     </footer>
 
 
-    <script src="../../js/city.js" async defer></script>
-
+    <script src="../../js/order/city.js" async defer></script>
+    <script src="../../js/order/formtest.js" async defer></script>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<!--     <script src="http://mockjs.com/dist/mock.js"></script> -->
     <script src="https://cdn.bootcss.com/Mock.js/1.0.1-beta3/mock-min.js"></script>
-    <script src="../../js/form.js" async defer></script>
+    <script src="../../js/order/form.js" async defer></script>
 </body>
 
 </html>

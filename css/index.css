@@ -28,12 +28,18 @@
 
 .slide-left {
     transform: translate(-100%, 0px);
+    -ms-transform:translate(-100%, 0px); /* IE 9 */
+    -webkit-transform:translate(-100%, 0px); /* Safari and Chrome */
     transition: transform 1s;
+    -webkit-transition: transform 1s;
 }
 
 .slide-right {
     transform: translate(100%, 0px);
+    -ms-transform:translate(100%, 0px); /* IE 9 */
+    -webkit-transform:translate(100%, 0px); /* Safari and Chrome */
     transition: transform 1s;
+    -webkit-transition: transform 1s;
 }
 
 .carousel-slide .active {
